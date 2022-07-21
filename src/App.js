@@ -49,6 +49,7 @@ class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.city !== prevState.city) {
       ForecastFetch(this.state.city).then(({ data }) => {
+        console.log(data);
         const { location, current, forecast } = data;
         const { condition } = current;
         // const textWeather = forecast;
